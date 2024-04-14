@@ -49,7 +49,7 @@ class LaundryManager:
 
     def apply_ordered(self):
         washes = []
-        self.laundry.clothes = sorted(self.laundry.clothes, key=lambda x: getattr(x, 'duration'), reverse=True)
+        #self.laundry.clothes = sorted(self.laundry.clothes, key=lambda x: getattr(x, 'duration'), reverse=True)
 
         for i in range(len(self.laundry.clothes)):
             clothe1 = self.laundry.clothes[i]
