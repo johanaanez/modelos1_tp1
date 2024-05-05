@@ -10,7 +10,6 @@ class LaundryFactory:
         with open(file_path, 'r') as file:
             reader = csv.reader(file, delimiter=' ')
             next(reader)
-            next(reader)
             row2 = next(reader)
 
             quantity_clothes = int(row2[2])
@@ -20,6 +19,7 @@ class LaundryFactory:
             for row in reader:
                 if row[0] == 'e':
                     wash.add_incompatibilities(int(row[1]), int(row[2]))
+                    wash.add_incompatibilities(int(row[2]), int(row[1]))
                 if row[0] == 'n':
                     wash.add_clothes(int(row[1]), int(row[2]))
 
