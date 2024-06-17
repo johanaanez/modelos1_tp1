@@ -9,7 +9,7 @@ def main():
     start_time = time.time()
     arguments = args.parse_arguments()
     input_file = "laundry/tercer_problema.txt"
-    output_file = "laundry/tercer_problema.txt"
+    output_file = "tercer_problema.txt"
     #input_file = arguments.inputfile
     #output_file = arguments.outputfile
 

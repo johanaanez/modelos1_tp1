@@ -21,13 +21,10 @@ class Laundry:
             self.compatibilities[id_clothe1].remove(id_clothe2)
             self.compatibilities[id_clothe2].remove(id_clothe1)
 
-
     def add_clothes(self, id, duration):
         self.clothes.append(Clothe(id, duration))
 
     def add_all_clothes(self, id):
-        allClothes = [i for i in range(self.quantity_clothes+1)]
+        allClothes = [i for i in range(self.quantity_clothes + 1)]
         allClothes.remove(0)
         self.compatibilities[id] = allClothes
-
-
