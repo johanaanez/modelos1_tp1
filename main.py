@@ -8,8 +8,8 @@ def main():
     # obtención de argumentos
     start_time = time.time()
     arguments = args.parse_arguments()
-    input_file = "laundry/segundo_problema.txt"
-    output_file = "segundo_problema.txt"
+    input_file = "laundry/tercer_problema.txt"
+    output_file = "laundry/tercer_problema.txt"
     #input_file = arguments.inputfile
     #output_file = arguments.outputfile
 

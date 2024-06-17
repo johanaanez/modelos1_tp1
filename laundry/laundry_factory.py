@@ -9,8 +9,9 @@ class LaundryFactory:
     def Load(file_path):
         with open(file_path, 'r') as file:
             reader = csv.reader(file, delimiter=' ')
-            next(reader)
             row2 = next(reader)
+            while row2[0] != 'p':
+                row2 = next(reader)
 
             quantity_clothes = int(row2[2])
             quantity_incompatibilities = int(row2[3])
