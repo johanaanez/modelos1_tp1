@@ -67,35 +67,5 @@ class LaundryManager:
                     max_duration = max(durations)
                     washes.append([wash, max_duration])
 
-        empty_washes = []
-
-        for i in range(len(washes)):
-            wash = washes[i]
-            if len(wash[0]) == 1:
-                clothe1 = wash[0][0]
-                j = 0
-                while i > j and len(wash[0]) == 1:
-                    previous_wash = washes[j][0]
-                    compatible = True
-                    for k in range(len(previous_wash)):
-                        clothe2 = previous_wash[k]
-                        if not are_compatibles(clothe1, clothe2, self.laundry.incompatibilities,
-                                               previous_wash):
-                            compatible = False
-                    if compatible:
-                        previous_wash.append(clothe1)
-                        durations = list(
-                            map(lambda z: z.duration,
-                                list(filter(lambda x: x.id in previous_wash, self.laundry.clothes))))
-                        max_duration = max(durations)
-                        washes[j][1] = max_duration
-                        washes[i][0] = []
-                        washes[i][1] = 0
-                        empty_washes.append(i)
-                    j = j + 1
-
-        washes.pop(10)
-        washes.pop(9)
-        washes.pop(8)
         print_time(washes)
         return washes
